@@ -4,9 +4,11 @@ sbt clean assembly
 ```
 2)
 
+```
 native-image -J-Xmx8G -H:+ReportExceptionStackTraces  \
              --delay-class-initialization-to-runtime="com.mysql.cj.jdbc.AbandonedConnectionCleanupThread,com.mysql.cj.jdbc.NonRegisteringDriver,com.mysql.cj.jdbc.MysqlDataSource,java.sql.DriverManager"               \
              --verbose --no-server -jar ./target/scala-2.12/fat.jar
+```
 
 Fails with:
 
